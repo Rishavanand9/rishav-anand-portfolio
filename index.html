@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishav Anand - Developer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5em;
+        }
+        .contact-info, .skills, .soft-skills, .projects, .awards, .education, .hobbies {
+            list-style-type: none;
+            padding: 0;
+        }
+        .contact-info li, .skills li, .soft-skills li, .projects li, .awards li, .education li, .hobbies li {
+            margin-bottom: 0.5em;
+        }
+        .contact-info li a {
+            color: #333;
+            text-decoration: none;
+        }
+        .contact-info li a:hover {
+            text-decoration: underline;
+        }
+        .job-title {
+            font-weight: bold;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 1em;
+        }
+        .tab {
+            padding: 1em;
+            background-color: #ccc;
+            flex: 1;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #bbb;
+        }
+        .tab.active {
+            background-color: #333;
+            color: #fff;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rishav Anand</h1>
+        <p><strong>Frontend Developer | Full Stack Developer</strong></p>
+        <p>Bangalore, INDIA</p>
+    </header>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="frontend">Frontend Developer</div>
+            <div class="tab" data-tab="fullstack">Full Stack Developer</div>
+        </div>
+        <div id="frontend" class="tab-content active">
+            <section>
+                <h2>Contact Information</h2>
+                <ul class="contact-info">
+                    <li>Phone: +91-8789863326</li>
+                    <li>Email: <a href="mailto:rishavanand1997@gmail.com">rishavanand1997@gmail.com</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/rishav-anand-40bb49123/" target="_blank">linkedin.com/in/rishav-anand-40bb49123/</a></li>
+                    <li>Github: <a href="https://github.com/Rishavanand9" target="_blank">github.com/Rishavanand9</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Professional Summary</h2>
+                <p>Seasoned Frontend Developer with over five years of experience specializing in React and JavaScript. Skilled in translating user requirements into engaging, efficient, and responsive designs. Proven track record in leading UI development and enhancing application stability in high-stakes environments.</p>
+            </section>
+            <section>
+                <h2>Experience</h2>
+                <h3>IT Analyst, Tata Consultancy Services (TCS)</h3>
+                <p><em>July 2022 - Present, Bangalore, India</em></p>
+                <p class="job-title">UI Team Lead (Hertz)</p>
+                <ul>
+                    <li>Leading a team of 2 React developers for the Hertz client, focusing on user requirement analysis and React design implementations.</li>
+                    <li>Spearheaded UI initiatives and ensured robust application performance.</li>
+                    <li>Utilized technologies such as React, JavaScript, Figma</li>
+                </ul>
+                <p class="job-title">FullStack Developer, Enterprise Holdings Inc (EHI)</p>
+                <ul>
+                    <li>Contributed to the transformation of legacy applications into modern React forms, resolved over 400 production issues, resulting in a 30% increase in application stability and performance prior to project release.</li>
+                    <li>Maintained NodeJS application, with a focus on data processing and management. Demonstrated expertise in handling bulk data from Excel files, implementing CRUD operations to ensure efficient data manipulation and management.</li>
+                    <li>Leveraged a tech stack including React, TypeScript, NodeJS, Lambda, AWS</li>
+                </ul>
+                <h3>Software Engineer, Deepcompute</h3>
+                <p><em>Oct 2018 - Jun 2022, Bangalore, India</em></p>
+                <p class="job-title">Lead Frontend Developer (Nference)</p>
+                <ul>
+                    <li>Led frontend development for applications analyzing medical research and clinical trials data, enhancing data visualization and user interaction by 25%.</li>
+                    <li>Created numerous React single-page applications and integrated complex visualizations like D3 charts.</li>
+                    <li>Demonstrated proficiency in technologies ReactJS, NextJS, JavaScript, D3</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <ul class="skills">
+                    <li>JavaScript</li>
+                    <li>React JS</li>
+                    <li>Node JS</li>
+                    <li>Figma</li>
+                    <li>D3</li>
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>TypeScript</li>
+                    <li>Next JS</li>
+                    <li>Lambda</li>
+                    <li>PostgresSQL</li>
+                    <li>HTML/CSS</li>
+                    <li>AWS</li>
+                    <li>Git</li>
+                    <li>Agile/Jira</li>
+                    <li>Material UI</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Soft Skills</h2>
+                <ul class="soft-skills">
+                    <li>Problem Solving</li>
+                    <li>Leadership</li>
+                    <li>Debugging Expert</li>
+                    <li>Communication and Collaboration</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Projects</h2>
+                <ul class="projects">
+                    <li>
+                        <strong>Developed a WebSocket-integrated D3 chart:</strong>
+                        <ul>
+                            <li>Integrated WebSocket communication to enable real-time data updates in the D3 chart within a React application.</li>
+                            <li>Utilized D3.js library to create visually appealing and interactive data visualizations, ensuring a smooth user experience.</li>
+                            <li>Implemented dynamic data rendering and updating mechanisms to reflect changes instantly as new data streams in.</li>
+                            <li>Ensured compatibility across different browsers and devices for seamless user interaction.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Created multiple static pages for clients:</strong>
+                        <ul>
+                            <li>Worked closely with clients to understand their brand identity, target audience, and business objectives.</li>
+                            <li>Designed modern, clean, and responsive layouts tailored to each client's specific needs and preferences.</li>
+                            <li>Utilized HTML, CSS, and JavaScript to implement the frontend components, ensuring cross-browser compatibility and accessibility.</li>
+                            <li>Employed responsive design techniques to optimize the pages for various screen sizes, including desktops, tablets, and smartphones.</li>
+                            <li>Incorporated SEO best practices to improve the visibility and search engine ranking of the static pages, enhancing the clients' digital presence and online visibility.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Awards and Recognition</h2>
+                <ul class="awards">
+                    <li>
+                        <strong>Performance Band 'A' Award, Tata Consultancy Services:</strong> Received in financial year 2023-24 for exceptional performance metrics and critical contributions to key projects, placing in the top performance tier company-wide.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Education</h2>
+                <ul class="education">
+                    <li>
+                        <strong>B.E (CSE) - 2014 - 2018:</strong> NMAM Institute of Technology (VTU)
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Certifications</h2>
+                <ul class="certifications">
+                    <li>Gen AI</li>
+                    <li>Agile Practitioner</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Hobbies</h2>
+                <ul class="hobbies">
+                    <li>Guitar</li>
+                    <li>Boxing</li>
+                </ul>
+            </section>
+        </div>
+        <div id="fullstack" class="tab-content">
+            <section>
+                <h2>Contact Information</h2>
+                <ul class="contact-info">
+                    <li>Phone: +91-8789863326</li>
+                    <li>Email: <a href="mailto:rishavanand1997@gmail.com">rishavanand1997@gmail.com</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/rishav-anand-40bb49123/" target="_blank">linkedin.com/in/rishav-anand-40bb49123/</a></li>
+                    <li>Github: <a href="https://github.com/Rishavanand9" target="_blank">github.com/Rishavanand9</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Professional Summary</h2>
+                <p>Dynamic Full Stack Developer with a diverse background in frontend technologies and burgeoning expertise in backend systems using Flask and PostgreSQL. Dedicated to building and maintaining robust, scalable applications that enhance user engagement and data management.</p>
+            </section>
+            <section>
+                <h2>Experience</h2>
+                <h3>IT Analyst, Tata Consultancy Services (TCS)</h3>
+                <p><em>July 2022 - Present, Bangalore, India</em></p>
+                <p class="job-title">UI Team Lead (Hertz)</p>
+                <ul>
+                    <li>Leading a team of 2 React developers for the Hertz client, focusing on user requirement analysis and React design implementations.</li>
+                    <li>Spearheaded UI initiatives and ensured robust application performance.</li>
+                    <li>Utilized technologies such as React, JavaScript, Figma</li>
+                </ul>
+                <p class="job-title">FullStack Developer, Enterprise Holdings Inc (EHI)</p>
+                <ul>
+                    <li>Contributed to the transformation of legacy applications into modern React forms, resolved over 400 production issues, resulting in a 30% increase in application stability and performance prior to project release.</li>
+                    <li>Maintained NodeJS application, with a focus on data processing and management. Demonstrated expertise in handling bulk data from Excel files, implementing CRUD operations to ensure efficient data manipulation and management.</li>
+                    <li>Leveraged a tech stack including React, TypeScript, NodeJS, Lambda, AWS</li>
+                </ul>
+                <h3>Software Engineer, Deepcompute</h3>
+                <p><em>Oct 2018 - Jun 2022, Bangalore, India</em></p>
+                <p class="job-title">Lead Frontend Developer (Nference)</p>
+                <ul>
+                    <li>Led frontend development for applications analyzing medical research and clinical trials data, enhancing data visualization and user interaction by 25%.</li>
+                    <li>Created numerous React single-page applications and integrated complex visualizations like D3 charts.</li>
+                    <li>Demonstrated proficiency in technologies ReactJS, NextJS, JavaScript, D3</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <ul class="skills">
+                    <li>JavaScript</li>
+                    <li>React JS</li>
+                    <li>Node JS</li>
+                    <li>Figma</li>
+                    <li>D3</li>
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>TypeScript</li>
+                    <li>Next JS</li>
+                    <li>Lambda</li>
+                    <li>PostgresSQL</li>
+                    <li>HTML/CSS</li>
+                    <li>AWS</li>
+                    <li>Git</li>
+                    <li>Agile/Jira</li>
+                    <li>Material UI</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Soft Skills</h2>
+                <ul class="soft-skills">
+                    <li>Problem Solving</li>
+                    <li>Leadership</li>
+                    <li>Debugging Expert</li>
+                    <li>Communication and Collaboration</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Projects</h2>
+                <ul class="projects">
+                    <li>
+                        <strong>Spearheaded a project utilizing Python and Flask framework to create a robust system for handling data retrieval and management:</strong>
+                        <ul>
+                            <li>Implemented PostgreSQL database integration for efficient storage and retrieval of WhatsApp messages.</li>
+                            <li>Designed RESTful APIs for seamless communication between the frontend and backend components.</li>
+                            <li>Ensured data security and integrity through encryption and authentication mechanisms.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Developed several freelance projects encompassing a diverse range of functionalities:</strong>
+                        <ul>
+                            <li>Real-time data visualization: Utilized libraries like D3.js or Plotly to create dynamic and interactive visualizations of streaming data.</li>
+                            <li>Static web page creation: Designed and developed static web pages using HTML, CSS, and JavaScript to showcase clients' products or services.</li>
+                            <li>Customized solutions: Tailored solutions to meet clients' specific requirements, integrating various technologies such as React.js, Next.js for frontend development.</li>
+                            <li>Collaborated closely with clients to understand their needs, provide technical expertise, and deliver high-quality solutions within agreed timelines.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Awards and Recognition</h2>
+                <ul class="awards">
+                    <li>
+                        <strong>Performance Band 'A' Award, Tata Consultancy Services:</strong> Received in financial year 2023-24 for exceptional performance metrics and critical contributions to key projects, placing in the top performance tier company-wide.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Education</h2>
+                <ul class="education">
+                    <li>
+                        <strong>B.E (CSE) - 2014 - 2018:</strong> NMAM Institute of Technology (VTU)
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Certifications</h2>
+                <ul class="certifications">
+                    <li>Gen AI</li>
+                    <li>Agile Practitioner</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Hobbies</h2>
+                <ul class="hobbies">
+                    <li>Guitar</li>
+                    <li>Boxing</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab, .tab-content').forEach(el => el.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
