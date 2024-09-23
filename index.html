@@ -6,64 +6,86 @@
     <title>Rishav Anand - Developer</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 2em 0;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 0.5em 0;
+            font-size: 1.2em;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
         section {
+            background-color: #fff;
             margin-bottom: 2em;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         h2 {
-            border-bottom: 2px solid #333;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
             padding-bottom: 0.5em;
+            margin-top: 0;
         }
-        .contact-info, .skills, .soft-skills, .projects, .awards, .education, .hobbies {
+        .contact-info, .skills, .soft-skills, .projects, .awards, .education, .hobbies, .certifications {
             list-style-type: none;
             padding: 0;
         }
-        .contact-info li, .skills li, .soft-skills li, .projects li, .awards li, .education li, .hobbies li {
-            margin-bottom: 0.5em;
+        .contact-info li, .skills li, .soft-skills li, .projects li, .awards li, .education li, .hobbies li, .certifications li {
+            margin-bottom: 0.8em;
         }
         .contact-info li a {
-            color: #333;
+            color: #3498db;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .contact-info li a:hover {
+            color: #2980b9;
             text-decoration: underline;
         }
         .job-title {
             font-weight: bold;
+            color: #34495e;
         }
         .tabs {
             display: flex;
-            cursor: pointer;
             margin-bottom: 1em;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            overflow: hidden;
         }
         .tab {
             padding: 1em;
-            background-color: #ccc;
+            background-color: #ecf0f1;
             flex: 1;
             text-align: center;
-            transition: background-color 0.3s;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
         }
         .tab:hover {
-            background-color: #bbb;
+            background-color: #bdc3c7;
         }
         .tab.active {
-            background-color: #333;
+            background-color: #3498db;
             color: #fff;
         }
         .tab-content {
@@ -71,6 +93,22 @@
         }
         .tab-content.active {
             display: block;
+        }
+        .skills li, .soft-skills li {
+            background-color: #e8f4f8;
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            display: inline-block;
+            margin-right: 0.5em;
+            margin-bottom: 0.8em;
+        }
+        .project-title {
+            color: #2c3e50;
+            margin-bottom: 0.5em;
+        }
+        .project-details {
+            padding-left: 1em;
+            border-left: 3px solid #3498db;
         }
     </style>
 </head>
@@ -229,6 +267,15 @@
                             "Employed responsive design techniques to optimize the pages for various screen sizes, including desktops, tablets, and smartphones.",
                             "Incorporated SEO best practices to improve the visibility and search engine ranking of the static pages, enhancing the clients' digital presence and online visibility."
                         ]
+                    },
+                    {
+                        title: "Developed a React-based Dashboard for Data Visualization",
+                        details: [
+                            "Created a responsive dashboard using React and Material-UI components for optimal user experience across devices.",
+                            "Integrated various chart types (line, bar, pie) using Recharts library to display complex data sets in an easily digestible format.",
+                            "Implemented real-time data updates using WebSocket connections, ensuring the dashboard always displays the most current information.",
+                            "Optimized performance through efficient state management and memoization techniques, resulting in smooth interactions even with large datasets."
+                        ]
                     }
                 ],
                 awards: [
@@ -289,12 +336,35 @@
                             "Customized solutions: Tailored solutions to meet clients' specific requirements, integrating various technologies such as React.js, Next.js for frontend development.",
                             "Collaborated closely with clients to understand their needs, provide technical expertise, and deliver high-quality solutions within agreed timelines."
                         ]
+                    },
+                   {
+                        title: "Cheque Parser Application",
+                        details: [
+                            "Developed a Python-based application to parse and extract information from scanned cheque images.",
+                            "Implemented Optical Character Recognition (OCR) using Tesseract to accurately read handwritten and printed text from cheques.",
+                            "Designed and implemented algorithms to identify and extract key information such as payee name, amount, date, and account numbers.",
+                            "Integrated error handling and validation mechanisms to ensure high accuracy in information extraction.",
+                            "Created a user-friendly interface for uploading cheque images and viewing extracted information."
+                        ]
+                    },
+                    {
+                        title: "AI-Powered Content Moderation System",
+                        details: [
+                            "Developed a machine learning model using Python and TensorFlow to automatically detect and flag inappropriate content in text and images.",
+                            "Implemented a RESTful API using Flask to allow easy integration of the moderation system into existing applications.",
+                            "Created a dashboard using React and D3.js to visualize moderation statistics and allow manual review of flagged content.",
+                            "Utilized AWS Lambda for serverless deployment, ensuring scalability and cost-efficiency."
+                        ]
                     }
                 ],
                 awards: [
                     {
                         title: "Performance Band 'A' Award, Tata Consultancy Services",
                         details: "Received in financial year 2023-24 for exceptional performance metrics and critical contributions to key projects, placing in the top performance tier company-wide."
+                    },
+                    {
+                        title: "Innovator of the Quarter, Enterprise Holdings Inc",
+                        details: "Recognized for developing an automated data processing pipeline that reduced manual data entry by 70% and improved data accuracy by 95%."
                     }
                 ],
                 education: [
@@ -303,8 +373,8 @@
                         institution: "NMAM Institute of Technology (VTU)"
                     }
                 ],
-                certifications: ["Gen AI", "Agile Practitioner"],
-                hobbies: ["Guitar", "Boxing"]
+                certifications: ["Gen AI", "Agile Practitioner", "AWS Certified Developer - Associate"],
+                hobbies: ["Guitar", "Boxing", "Open Source Contributing"]
             }
         };
 
@@ -351,8 +421,8 @@
             projects.forEach(project => {
                 projectsHtml += `
                     <li>
-                        <strong>${project.title}:</strong>
-                        <ul>
+                        <h3 class="project-title">${project.title}</h3>
+                        <ul class="project-details">
                             ${project.details.map(detail => `<li>${detail}</li>`).join('')}
                         </ul>
                     </li>
