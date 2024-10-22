@@ -110,6 +110,19 @@
             padding-left: 1em;
             border-left: 3px solid #3498db;
         }
+        .download-btn {
+        display: inline-block;
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+    .download-btn:hover {
+        background-color: #2980b9;
+    }
     </style>
 </head>
 <body>
@@ -125,6 +138,7 @@
         </div>
         <div id="frontend" class="tab-content active">
             <!-- Frontend Developer Content -->
+                        <a href="#" class="download-btn" id="download-frontend">Download Frontend Resume (PDF)</a>
             <section>
                 <h2>Contact Information</h2>
                 <ul class="contact-info" id="contact-info-frontend"></ul>
@@ -168,6 +182,7 @@
         </div>
         <div id="fullstack" class="tab-content">
             <!-- Full Stack Developer Content -->
+                        <a href="#" class="download-btn" id="download-fullstack">Download Full Stack Resume (PDF)</a>
             <section>
                 <h2>Contact Information</h2>
                 <ul class="contact-info" id="contact-info-fullstack"></ul>
@@ -495,6 +510,25 @@
                 tab.classList.add('active');
                 document.getElementById(tab.dataset.tab).classList.add('active');
             });
+        });
+
+                // Function to generate PDF (you'll need to implement this)
+        function generatePDF(type) {
+            // This is a placeholder function. You'll need to implement the actual PDF generation.
+            // You might want to use a library like jsPDF or html2pdf.js for this.
+            console.log(`Generating ${type} PDF...`);
+            alert(`Downloading ${type} resume as PDF. (This is a placeholder - implement actual PDF generation)`);
+        }
+
+        // Add event listeners for download buttons
+        document.getElementById('download-frontend').addEventListener('click', (e) => {
+            e.preventDefault();
+            generatePDF('Frontend');
+        });
+
+        document.getElementById('download-fullstack').addEventListener('click', (e) => {
+            e.preventDefault();
+            generatePDF('Full Stack');
         });
     </script>
 </body>
