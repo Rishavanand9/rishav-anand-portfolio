@@ -1,71 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rishav Anand - Developer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
             line-height: 1.6;
         }
+
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
             color: #ecf0f1;
-            padding: 2em 0;
+            padding: 3em 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
+
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            margin-bottom: 0.2em;
         }
+
         header p {
             margin: 0.5em 0;
             font-size: 1.2em;
         }
+
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+
         section {
             background-color: #fff;
             margin-bottom: 2em;
             padding: 2em;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
         h2 {
             color: #2c3e50;
             border-bottom: 2px solid #3498db;
             padding-bottom: 0.5em;
             margin-top: 0;
         }
-        .contact-info, .skills, .soft-skills, .projects, .awards, .education, .hobbies, .certifications {
+
+        .contact-info,
+        .skills,
+        .soft-skills,
+        .projects,
+        .awards,
+        .education,
+        .hobbies,
+        .certifications {
             list-style-type: none;
             padding: 0;
         }
-        .contact-info li, .skills li, .soft-skills li, .projects li, .awards li, .education li, .hobbies li, .certifications li {
+
+        .contact-info li,
+        .skills li,
+        .soft-skills li,
+        .projects li,
+        .awards li,
+        .education li,
+        .hobbies li,
+        .certifications li {
             margin-bottom: 0.8em;
         }
+
         .contact-info li a {
             color: #3498db;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .contact-info li a:hover {
             color: #2980b9;
             text-decoration: underline;
         }
+
         .job-title {
             font-weight: bold;
             color: #34495e;
         }
+
         .tabs {
             display: flex;
             margin-bottom: 1em;
@@ -73,63 +111,160 @@
             border-radius: 8px;
             overflow: hidden;
         }
+
         .tab {
             padding: 1em;
             background-color: #ecf0f1;
             flex: 1;
             text-align: center;
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
+            transition: all 0.3s ease;
         }
+
         .tab:hover {
-            background-color: #bdc3c7;
+            transform: translateY(-2px);
         }
+
         .tab.active {
             background-color: #3498db;
             color: #fff;
         }
+
         .tab-content {
             display: none;
         }
+
         .tab-content.active {
             display: block;
         }
-        .skills li, .soft-skills li {
+
+        .skills li,
+        .soft-skills li {
             background-color: #e8f4f8;
             padding: 0.5em 1em;
             border-radius: 20px;
             display: inline-block;
             margin-right: 0.5em;
             margin-bottom: 0.8em;
+            transition: all 0.3s ease;
         }
+
+        .skills li:hover,
+        .soft-skills li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         .project-title {
             color: #2c3e50;
             margin-bottom: 0.5em;
         }
+
         .project-details {
             padding-left: 1em;
             border-left: 3px solid #3498db;
         }
+
         .download-btn {
-        display: inline-block;
-        background-color: #3498db;
-        color: #fff;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-top: 20px;
-        transition: background-color 0.3s ease;
-    }
-    .download-btn:hover {
-        background-color: #2980b9;
-    }
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Animation for header */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -50px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        header h1,
+        header p {
+            animation: fadeInDown 1s ease-out;
+        }
+
+        /* Add cursor pointer to interactive elements */
+        .tab,
+        .download-btn,
+        .contact-info li a {
+            cursor: pointer;
+        }
+
+        /* Styles for PDF generation */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 10px;
+                /* Reduce font size for PDF */
+            }
+
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+
+            header,
+            .tabs,
+            .download-btn {
+                display: none;
+                /* Hide unnecessary elements in PDF */
+            }
+
+            section {
+                page-break-inside: avoid;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+
+            h1,
+            h2 {
+                margin-top: 0;
+            }
+
+            ul {
+                padding-left: 20px;
+            }
+        }
+
+        .download-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #ecf0f1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .download-icon:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
-<body>
+
+<body onload="AOS.init();">
     <header>
         <h1 id="name"></h1>
         <p id="role"></p>
         <p id="location"></p>
+        <i class="fas fa-download download-icon" id="download-icon" title="Download Resume"></i>
     </header>
     <div class="container">
         <div class="tabs">
@@ -138,7 +273,6 @@
         </div>
         <div id="frontend" class="tab-content active">
             <!-- Frontend Developer Content -->
-                        <a href="#" class="download-btn" id="download-frontend">Download Frontend Resume (PDF)</a>
             <section>
                 <h2>Contact Information</h2>
                 <ul class="contact-info" id="contact-info-frontend"></ul>
@@ -182,7 +316,6 @@
         </div>
         <div id="fullstack" class="tab-content">
             <!-- Full Stack Developer Content -->
-                        <a href="#" class="download-btn" id="download-fullstack">Download Full Stack Resume (PDF)</a>
             <section>
                 <h2>Contact Information</h2>
                 <ul class="contact-info" id="contact-info-fullstack"></ul>
@@ -353,7 +486,7 @@
                             "Collaborated closely with clients to understand their needs, provide technical expertise, and deliver high-quality solutions within agreed timelines."
                         ]
                     },
-                   {
+                    {
                         title: "Cheque Parser Application",
                         details: [
                             "Developed a Python-based application to parse and extract information from scanned cheque images.",
@@ -373,15 +506,15 @@
                         ]
                     },
                     {
-                    title: "WhatsApp Chat Extractor and AI Analysis",
-                    details: [
-                        "Developed a JavaScript-based tool to extract chat data from WhatsApp Web, enabling users to easily backup and analyze their conversations.",
-                        "Implemented secure authentication and data handling to ensure user privacy and compliance with WhatsApp's terms of service.",
-                        "Utilized LLM (Large Language Model) technologies to train a custom model on the extracted WhatsApp chat data, enabling personalized chat analysis and insights.",
-                        "Integrated Hugging Face's transformers library to fine-tune the model and generate context-aware responses based on chat history.",
-                        "Created a user-friendly interface for chat extraction and AI-powered analysis, providing valuable insights into communication patterns and sentiment analysis."
-                    ]
-                },
+                        title: "WhatsApp Chat Extractor and AI Analysis",
+                        details: [
+                            "Developed a JavaScript-based tool to extract chat data from WhatsApp Web, enabling users to easily backup and analyze their conversations.",
+                            "Implemented secure authentication and data handling to ensure user privacy and compliance with WhatsApp's terms of service.",
+                            "Utilized LLM (Large Language Model) technologies to train a custom model on the extracted WhatsApp chat data, enabling personalized chat analysis and insights.",
+                            "Integrated Hugging Face's transformers library to fine-tune the model and generate context-aware responses based on chat history.",
+                            "Created a user-friendly interface for chat extraction and AI-powered analysis, providing valuable insights into communication patterns and sentiment analysis."
+                        ]
+                    },
                 ],
                 awards: [
                     {
@@ -513,13 +646,39 @@
             });
         });
 
-                // Function to generate PDF (you'll need to implement this)
         function generatePDF(type) {
-            // This is a placeholder function. You'll need to implement the actual PDF generation.
-            // You might want to use a library like jsPDF or html2pdf.js for this.
-            console.log(`Generating ${type} PDF...`);
-            alert(`Downloading ${type} resume as PDF. (This is a placeholder - implement actual PDF generation)`);
+            const element = document.getElementById(type.toLowerCase());
+            const name = data.name;
+            const role = type === 'frontend' ? 'Frontend Developer' : 'Full Stack Developer';
+
+            // Create a temporary element for the PDF title
+            const title = document.createElement('h1');
+            title.textContent = `${name} - ${role} Resume`;
+            title.style.textAlign = 'center';
+            title.style.color = '#2c3e50';
+            title.style.marginBottom = '20px';
+            element.insertBefore(title, element.firstChild);
+
+            const options = {
+                margin: 10,
+                filename: `${type}_Developer_Resume_${data.name}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().from(element).set(options).save().then(() => {
+                // Remove the temporary title after PDF generation
+                element.removeChild(title);
+            });
         }
+
+        // Add event listener for download icon
+        document.getElementById('download-icon').addEventListener('click', () => {
+            const activeTab = document.querySelector('.tab.active');
+            const type = activeTab.dataset.tab;
+            generatePDF(type);
+        });
 
         // Add event listeners for download buttons
         document.getElementById('download-frontend').addEventListener('click', (e) => {
@@ -531,6 +690,15 @@
             e.preventDefault();
             generatePDF('Full Stack');
         });
+
+        // After rendering all content
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        });
     </script>
 </body>
+
 </html>
