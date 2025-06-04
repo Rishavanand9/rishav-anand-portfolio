@@ -4,130 +4,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Rishav Anand, a seasoned Frontend and Full Stack Developer based in Bangalore, India.">
+    <meta name="keywords" content="Rishav Anand, Frontend Developer, Full Stack Developer, React, JavaScript, Portfolio">
+    <meta name="author" content="Rishav Anand">
     <title>Rishav Anand - Developer</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+            --card-gradient: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-accent: #00f2fe;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --border-color: #333;
+            --shadow-primary: 0 20px 40px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-gradient);
+            z-index: -1;
+        }
+
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            background: var(--secondary-gradient);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-gradient);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(30px) rotate(240deg); }
         }
 
         header {
-            background: linear-gradient(to right, #2c3e50, #4ca1af);
-            color: #ecf0f1;
-            padding: 3em 0;
+            background: var(--card-gradient);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 4rem 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--primary-gradient);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-primary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         header h1 {
-            margin: 0;
-            font-size: 3em;
-            margin-bottom: 0.2em;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        header p {
-            margin: 0.5em 0;
-            font-size: 1.2em;
+        .role-text {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .location-text {
+            font-size: 1.1rem;
+            color: var(--text-accent);
+            font-weight: 500;
+        }
+
+        .download-icon {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-primary);
+        }
+
+        .download-icon:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            background-color: #fff;
-            margin-bottom: 2em;
-            padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5em;
-            margin-top: 0;
-        }
-
-        .contact-info,
-        .skills,
-        .soft-skills,
-        .projects,
-        .awards,
-        .education,
-        .hobbies,
-        .certifications {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .contact-info li,
-        .skills li,
-        .soft-skills li,
-        .projects li,
-        .awards li,
-        .education li,
-        .hobbies li,
-        .certifications li {
-            margin-bottom: 0.8em;
-        }
-
-        .contact-info li a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info li a:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-
-        .job-title {
-            font-weight: bold;
-            color: #34495e;
+            padding: 2rem;
         }
 
         .tabs {
             display: flex;
-            margin-bottom: 1em;
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            overflow: hidden;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            justify-content: center;
         }
 
         .tab {
-            padding: 1em;
-            background-color: #ecf0f1;
-            flex: 1;
-            text-align: center;
+            padding: 1rem 2rem;
+            background: var(--card-gradient);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
         }
 
-        .tab:hover {
-            transform: translateY(-2px);
+        .tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .tab:hover::before,
+        .tab.active::before {
+            left: 0;
         }
 
         .tab.active {
-            background-color: #3498db;
-            color: #fff;
+            color: var(--text-primary);
+            border-color: transparent;
+            box-shadow: var(--shadow-primary);
         }
 
         .tab-content {
@@ -138,226 +251,544 @@
             display: block;
         }
 
-        .skills li,
-        .soft-skills li {
-            background-color: #e8f4f8;
-            padding: 0.5em 1em;
+        .section {
+            background: var(--card-gradient);
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            padding: 2.5rem;
             border-radius: 20px;
-            display: inline-block;
-            margin-right: 0.5em;
-            margin-bottom: 0.8em;
+            backdrop-filter: blur(20px);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .skills li:hover,
-        .soft-skills li:hover {
-            transform: scale(1.05);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-gradient);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--text-accent);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .contact-item {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item:hover {
+            border-color: var(--text-accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-item a {
+            color: var(--text-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--text-primary);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .skill-item {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary-gradient);
+            opacity: 0.1;
+            transition: left 0.3s ease;
+        }
+
+        .skill-item:hover::before {
+            left: 0;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--text-accent);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+        }
+
+        .experience-item {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-gradient);
+        }
+
+        .company-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-date {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--accent-gradient);
+            opacity: 0.1;
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(79, 172, 254, 0.1);
+            border-color: var(--text-accent);
         }
 
         .project-title {
-            color: #2c3e50;
-            margin-bottom: 0.5em;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-accent);
+            margin-bottom: 1rem;
         }
 
         .project-details {
-            padding-left: 1em;
-            border-left: 3px solid #3498db;
+            list-style: none;
+            padding-left: 0;
         }
 
-        .download-btn {
-            display: inline-block;
-            background-color: #3498db;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
+        .project-details li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
         }
 
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        .project-details li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--text-accent);
         }
 
-        /* Animation for header */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translate3d(0, -50px, 0);
+        .award-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--text-accent);
+        }
+
+        .award-title {
+            font-weight: 600;
+            color: var(--text-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .education-item {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .degree {
+            font-weight: 600;
+            color: var(--text-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .institution {
+            color: var(--text-secondary);
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loading::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--text-accent);
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
             }
-
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
+            
+            .role-text {
+                font-size: 1.2rem;
+            }
+            
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .download-icon {
+                top: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
             }
         }
 
-        header h1,
-        header p {
-            animation: fadeInDown 1s ease-out;
+        ::-webkit-scrollbar {
+            width: 8px;
         }
 
-        /* Add cursor pointer to interactive elements */
-        .tab,
-        .download-btn,
-        .contact-info li a {
-            cursor: pointer;
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
         }
 
-        /* Styles for PDF generation */
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gradient);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-gradient);
+        }
+
         @media print {
             body {
                 margin: 0;
                 padding: 0;
-                font-size: 10px;
-                /* Reduce font size for PDF */
+                font-size: 10pt;
+                background: #fff;
             }
 
             .container {
                 max-width: none;
-                padding: 0;
+                padding: 10mm;
             }
 
             header,
             .tabs,
-            .download-btn {
+            .download-icon,
+            .floating-shapes {
                 display: none;
-                /* Hide unnecessary elements in PDF */
             }
 
-            section {
+            .section {
                 page-break-inside: avoid;
-                margin-bottom: 10px;
-                padding: 10px;
+                margin-bottom: 10mm;
+                padding: 10mm;
+                border: none;
+                box-shadow: none;
+                background: #fff;
             }
 
-            h1,
-            h2 {
+            .section::before {
+                display: none;
+            }
+
+            h1, h2 {
                 margin-top: 0;
+                color: #000;
+                -webkit-text-fill-color: #000;
             }
 
-            ul {
-                padding-left: 20px;
+            .contact-item,
+            .skill-item,
+            .experience-item,
+            .project-card,
+            .award-item,
+            .education-item {
+                background: #fff;
+                border: none;
             }
-        }
 
-        .download-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: #ecf0f1;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+            .contact-item a,
+            .project-title,
+            .company-name,
+            .award-title,
+            .degree {
+                color: #000;
+            }
 
-        .download-icon:hover {
-            transform: scale(1.1);
+            .project-details li::before {
+                content: '•';
+                color: #000;
+            }
         }
     </style>
 </head>
 
-<body onload="AOS.init();">
+<body onload="AOS.init({ duration: 1000, once: true });">
+    <div class="loading" id="loading"></div>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
     <header>
-        <h1 id="name"></h1>
-        <p id="role"></p>
-        <p id="location"></p>
-        <i class="fas fa-download download-icon" id="download-icon" title="Download Resume"></i>
+        <div class="header-content">
+            <div class="profile-image">RA</div>
+            <h1 id="name"></h1>
+            <p class="role-text" id="role"></p>
+            <p class="location-text" id="location"></p>
+            <div class="download-icon" id="download-icon" title="Download Resume" role="button" aria-label="Download Resume">
+                <i class="fas fa-download"></i>
+            </div>
+        </div>
     </header>
+
     <div class="container">
-        <div class="tabs">
-            <div class="tab active" data-tab="frontend">Frontend Developer</div>
-            <div class="tab" data-tab="fullstack">Full Stack Developer</div>
+        <div class="tabs" role="tablist">
+            <div class="tab active" data-tab="frontend" role="tab" aria-selected="true" tabindex="0">Frontend Developer</div>
+            <div class="tab" data-tab="fullstack" role="tab" aria-selected="false" tabindex="0">Full Stack Developer</div>
         </div>
-        <div id="frontend" class="tab-content active">
-            <!-- Frontend Developer Content -->
-            <section>
-                <h2>Contact Information</h2>
-                <ul class="contact-info" id="contact-info-frontend"></ul>
-            </section>
-            <section>
-                <h2>Professional Summary</h2>
+
+        <div id="frontend" class="tab-content active" role="tabpanel">
+            <div class="section" data-aos="fade-up">
+                <h2><i class="fas fa-address-card"></i> Contact Information</h2>
+                <ul class="contact-grid" id="contact-info-frontend"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="100">
+                <h2><i class="fas fa-user"></i> Professional Summary</h2>
                 <p id="summary-frontend"></p>
-            </section>
-            <section>
-                <h2>Experience</h2>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="200">
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
                 <div id="experience-frontend"></div>
-            </section>
-            <section>
-                <h2>Skills</h2>
-                <ul class="skills" id="skills-frontend"></ul>
-            </section>
-            <section>
-                <h2>Soft Skills</h2>
-                <ul class="soft-skills" id="soft-skills-frontend"></ul>
-            </section>
-            <section>
-                <h2>Projects</h2>
-                <ul class="projects" id="projects-frontend"></ul>
-            </section>
-            <section>
-                <h2>Awards and Recognition</h2>
-                <ul class="awards" id="awards-frontend"></ul>
-            </section>
-            <section>
-                <h2>Education</h2>
-                <ul class="education" id="education-frontend"></ul>
-            </section>
-            <section>
-                <h2>Certifications</h2>
-                <ul class="certifications" id="certifications-frontend"></ul>
-            </section>
-            <section>
-                <h2>Hobbies</h2>
-                <ul class="hobbies" id="hobbies-frontend"></ul>
-            </section>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="300">
+                <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                <ul class="skills-grid" id="skills-frontend"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="400">
+                <h2><i class="fas fa-heart"></i> Soft Skills</h2>
+                <ul class="skills-grid" id="soft-skills-frontend"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="500">
+                <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                <div id="projects-frontend"></div>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="600">
+                <h2><i class="fas fa-trophy"></i> Awards and Recognition</h2>
+                <div id="awards-frontend"></div>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="700">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <ul class="education-grid" id="education-frontend"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="800">
+                <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                <ul class="skills-grid" id="certifications-frontend"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="900">
+                <h2><i class="fas fa-gamepad"></i> Hobbies</h2>
+                <ul class="skills-grid" id="hobbies-frontend"></ul>
+            </div>
         </div>
-        <div id="fullstack" class="tab-content">
-            <!-- Full Stack Developer Content -->
-            <section>
-                <h2>Contact Information</h2>
-                <ul class="contact-info" id="contact-info-fullstack"></ul>
-            </section>
-            <section>
-                <h2>Professional Summary</h2>
+
+        <div id="fullstack" class="tab-content" role="tabpanel">
+            <div class="section" data-aos="fade-up">
+                <h2><i class="fas fa-address-card"></i> Contact Information</h2>
+                <ul class="contact-grid" id="contact-info-fullstack"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="100">
+                <h2><i class="fas fa-user"></i> Professional Summary</h2>
                 <p id="summary-fullstack"></p>
-            </section>
-            <section>
-                <h2>Experience</h2>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="200">
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
                 <div id="experience-fullstack"></div>
-            </section>
-            <section>
-                <h2>Skills</h2>
-                <ul class="skills" id="skills-fullstack"></ul>
-            </section>
-            <section>
-                <h2>Soft Skills</h2>
-                <ul class="soft-skills" id="soft-skills-fullstack"></ul>
-            </section>
-            <section>
-                <h2>Projects</h2>
-                <ul class="projects" id="projects-fullstack"></ul>
-            </section>
-            <section>
-                <h2>Awards and Recognition</h2>
-                <ul class="awards" id="awards-fullstack"></ul>
-            </section>
-            <section>
-                <h2>Education</h2>
-                <ul class="education" id="education-fullstack"></ul>
-            </section>
-            <section>
-                <h2>Certifications</h2>
-                <ul class="certifications" id="certifications-fullstack"></ul>
-            </section>
-            <section>
-                <h2>Hobbies</h2>
-                <ul class="hobbies" id="hobbies-fullstack"></ul>
-            </section>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="300">
+                <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                <ul class="skills-grid" id="skills-fullstack"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="400">
+                <h2><i class="fas fa-heart"></i> Soft Skills</h2>
+                <ul class="skills-grid" id="soft-skills-fullstack"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="500">
+                <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                <div id="projects-fullstack"></div>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="600">
+                <h2><i class="fas fa-trophy"></i> Awards and Recognition</h2>
+                <div id="awards-fullstack"></div>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="700">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <ul class="education-grid" id="education-fullstack"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="800">
+                <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                <ul class="skills-grid" id="certifications-fullstack"></ul>
+            </div>
+
+            <div class="section" data-aos="fade-up" data-aos-delay="900">
+                <h2><i class="fas fa-gamepad"></i> Hobbies</h2>
+                <ul class="skills-grid" id="hobbies-fullstack"></ul>
+            </div>
         </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         const data = {
@@ -372,16 +803,26 @@
                 leetcode: "https://leetcode.com/u/Rishavanand9/"
             },
             frontend: {
-                summary: "Seasoned Frontend Developer with over five years of experience specializing in React and JavaScript. Skilled in translating user requirements into engaging, efficient, and responsive designs. Proven track record in leading UI development and enhancing application stability in high-stakes environments.",
+                summary: "Seasoned Frontend Developer with over six years of experience specializing in React and JavaScript. Currently contributing to innovative solutions at Picarro, focusing on cutting-edge frontend technologies. Skilled in translating user requirements into engaging, efficient, and responsive designs with a proven track record in leading UI development teams.",
                 experience: [
                     {
+                        title: "Frontend Developer, Picarro",
+                        date: "April 2025 - Present, Bengaluru, India",
+                        role: "Frontend Developer",
+                        tasks: [
+                            "Developing modern React applications using cutting-edge frontend technologies and best practices.",
+                            "Collaborating with cross-functional teams to deliver high-quality user interfaces and experiences.",
+                            "Implementing responsive designs and optimizing application performance for better user engagement."
+                        ]
+                    },
+                    {
                         title: "IT Analyst, Tata Consultancy Services (TCS)",
-                        date: "July 2022 - Present, Bangalore, India",
+                        date: "July 2022 - March 2025, Bangalore, India",
                         role: "UI Team Lead (Hertz)",
                         tasks: [
-                            "Leading a team of 2 React developers for the Hertz client, focusing on user requirement analysis and React design implementations.",
-                            "Spearheaded UI initiatives and ensured robust application performance.",
-                            "Utilized technologies such as React, JavaScript, Figma"
+                            "Led a team of 2 React developers for the Hertz client, focusing on user requirement analysis and React design implementations.",
+                            "Spearheaded UI initiatives and ensured robust application performance with 99% uptime.",
+                            "Utilized technologies such as React, JavaScript, TypeScript, and Figma for comprehensive frontend solutions."
                         ]
                     },
                     {
@@ -391,39 +832,38 @@
                         tasks: [
                             "Led frontend development for applications analyzing medical research and clinical trials data, enhancing data visualization and user interaction by 25%.",
                             "Created numerous React single-page applications and integrated complex visualizations like D3 charts.",
-                            "Demonstrated proficiency in technologies ReactJS, NextJS, JavaScript, D3"
+                            "Demonstrated proficiency in ReactJS, NextJS, JavaScript, D3, and modern frontend architectures."
                         ]
                     }
                 ],
-                skills: ["JavaScript", "React JS", "Node JS", "Figma", "D3", "Python", "Flask", "TypeScript", "Next JS", "Lambda", "PostgresSQL", "HTML/CSS", "AWS", "Git", "Agile/Jira", "Material UI"],
-                softSkills: ["Problem Solving", "Leadership", "Debugging Expert", "Communication and Collaboration"],
+                skills: ["JavaScript", "React JS", "TypeScript", "Next JS", "Node JS", "Figma", "D3.js", "Python", "Flask", "AWS Lambda", "PostgreSQL", "HTML5/CSS3", "Git", "Agile/Jira", "Material UI", "Tailwind CSS"],
+                softSkills: ["Problem Solving", "Leadership", "Team Management", "Debugging Expert", "Communication", "Collaboration", "Mentoring"],
                 projects: [
                     {
-                        title: "Developed a WebSocket-integrated D3 chart",
+                        title: "Real-time Data Visualization Dashboard",
                         details: [
-                            "Integrated WebSocket communication to enable real-time data updates in the D3 chart within a React application.",
-                            "Utilized D3.js library to create visually appealing and interactive data visualizations, ensuring a smooth user experience.",
-                            "Implemented dynamic data rendering and updating mechanisms to reflect changes instantly as new data streams in.",
-                            "Ensured compatibility across different browsers and devices for seamless user interaction."
+                            "Developed a WebSocket-integrated D3 chart system enabling real-time data updates in React applications.",
+                            "Implemented dynamic data rendering with smooth animations and transitions for enhanced user experience.",
+                            "Optimized performance for handling large datasets with efficient state management and memoization techniques.",
+                            "Ensured cross-browser compatibility and responsive design for seamless multi-device accessibility."
                         ]
                     },
                     {
-                        title: "Created multiple static pages for clients",
+                        title: "Client Portfolio Management System",
                         details: [
-                            "Worked closely with clients to understand their brand identity, target audience, and business objectives.",
-                            "Designed modern, clean, and responsive layouts tailored to each client's specific needs and preferences.",
-                            "Utilized HTML, CSS, and JavaScript to implement the frontend components, ensuring cross-browser compatibility and accessibility.",
-                            "Employed responsive design techniques to optimize the pages for various screen sizes, including desktops, tablets, and smartphones.",
-                            "Incorporated SEO best practices to improve the visibility and search engine ranking of the static pages, enhancing the clients' digital presence and online visibility."
+                            "Created multiple responsive static pages tailored to diverse client requirements and brand identities.",
+                            "Implemented modern design patterns with clean layouts optimized for various screen sizes and devices.",
+                            "Integrated SEO best practices resulting in improved search engine rankings and enhanced digital presence.",
+                            "Utilized advanced CSS techniques and JavaScript interactions for dynamic user engagement."
                         ]
                     },
                     {
-                        title: "Developed a React-based Dashboard for Data Visualization",
+                        title: "Enterprise React Dashboard",
                         details: [
-                            "Created a responsive dashboard using React and Material-UI components for optimal user experience across devices.",
-                            "Integrated various chart types (line, bar, pie) using Recharts library to display complex data sets in an easily digestible format.",
-                            "Implemented real-time data updates using WebSocket connections, ensuring the dashboard always displays the most current information.",
-                            "Optimized performance through efficient state management and memoization techniques, resulting in smooth interactions even with large datasets."
+                            "Built a comprehensive dashboard using React and Material-UI with advanced data visualization capabilities.",
+                            "Integrated multiple chart types using Recharts library for complex data representation and analysis.",
+                            "Implemented WebSocket connections for real-time updates ensuring always-current information display.",
+                            "Achieved optimal performance through code splitting, lazy loading, and efficient rendering strategies."
                         ]
                     }
                 ],
@@ -434,91 +874,100 @@
                     }
                 ],
                 education: [
-                      {
+                    {
                         degree: "M.Tech (Software Systems) - 2022 - 2024",
                         institution: "BITS Pilani (Work Integrated Learning Platform)"
                     },
                     {
-                        degree: "B.E (CSE) - 2014 - 2018",
+                        degree: "B.E (Computer Science Engineering) - 2014 - 2018",
                         institution: "NMAM Institute of Technology (VTU)"
                     }
                 ],
-                certifications: ["Gen AI", "Agile Practitioner"],
-                hobbies: ["Guitar", "Boxing"]
+                certifications: ["Generative AI Specialist", "Agile Practitioner", "React Advanced Patterns"],
+                hobbies: ["Guitar", "Boxing", "Open Source Contributing"]
             },
             fullstack: {
-                summary: "Dynamic Full Stack Developer with a diverse background in frontend technologies and burgeoning expertise in backend systems using Flask and PostgreSQL. Dedicated to building and maintaining robust, scalable applications that enhance user engagement and data management.",
+                summary: "Dynamic Full Stack Developer with comprehensive expertise in modern web technologies. Currently driving innovation at Picarro while maintaining extensive experience in both frontend and backend development. Specialized in building scalable applications using React, Node.js, and cloud technologies with a focus on delivering exceptional user experiences.",
                 experience: [
                     {
+                        title: "Frontend Developer, Picarro",
+                        date: "April 2025 - Present, Bengaluru, India",
+                        role: "Frontend Developer",
+                        tasks: [
+                            "Developing modern React applications using cutting-edge frontend technologies and best practices.",
+                            "Collaborating with cross-functional teams to deliver high-quality user interfaces and experiences.",
+                            "Implementing responsive designs and optimizing application performance for better user engagement."
+                        ]
+                    },
+                    {
                         title: "IT Analyst, Tata Consultancy Services (TCS)",
-                        date: "July 2022 - Present, Bangalore, India",
+                        date: "July 2022 - March 2025, Bangalore, India",
                         role: "UI Team Lead (Hertz)",
                         tasks: [
-                            "Leading a team of 2 React developers for the Hertz client, focusing on user requirement analysis and React design implementations.",
-                            "Spearheaded UI initiatives and ensured robust application performance.",
-                            "Utilized technologies such as React, JavaScript, Figma"
+                            "Led a team of 2 React developers for the Hertz client, focusing on user requirement analysis and React design implementations.",
+                            "Spearheaded UI initiatives and ensured robust application performance with 99% uptime.",
+                            "Utilized technologies such as React, JavaScript, TypeScript, and Figma for comprehensive frontend solutions."
                         ]
                     },
                     {
                         title: "FullStack Developer, Enterprise Holdings Inc (EHI)",
-                        date: "",
-                        role: "",
+                        date: "Contract Position - 2023",
+                        role: "Full Stack Developer",
                         tasks: [
-                            "Contributed to the transformation of legacy applications into modern React forms, resolved over 400 production issues, resulting in a 30% increase in application stability and performance prior to project release.",
-                            "Maintained NodeJS application, with a focus on data processing and management. Demonstrated expertise in handling bulk data from Excel files, implementing CRUD operations to ensure efficient data manipulation and management.",
-                            "Leveraged a tech stack including React, TypeScript, NodeJS, Lambda, AWS"
+                            "Contributed to the transformation of legacy applications into modern React forms, resolved over 400 production issues, resulting in a 30% increase in application stability and performance.",
+                            "Maintained NodeJS applications with focus on data processing and management, handling bulk data from Excel files with efficient CRUD operations.",
+                            "Leveraged React, TypeScript, NodeJS, AWS Lambda for comprehensive full-stack solutions."
                         ]
                     }
                 ],
-                skills: ["JavaScript", "React JS", "Node JS", "Figma", "D3", "Python", "Flask", "TypeScript", "Next JS", "Lambda", "HTML/CSS", "AWS", "Git", "Agile/Jira", "Material UI", "LLM", "Hugging Face", "Adonis JS", "Docker", "PostgreSQL"],
-                softSkills: ["Problem Solving", "Leadership", "Debugging Expert", "Communication and Collaboration"],
+                skills: ["JavaScript", "React JS", "Node JS", "TypeScript", "Next JS", "Python", "Flask", "AWS Lambda", "PostgreSQL", "Docker", "Git", "Agile/Jira", "Material UI", "Tailwind CSS", "LLM Integration", "Hugging Face", "AdonisJS", "MongoDB", "Express.js"],
+                softSkills: ["Problem Solving", "Leadership", "System Architecture", "Debugging Expert", "Communication", "Collaboration", "Project Management"],
                 projects: [
                     {
-                        title: "Spearheaded a project utilizing Python and Flask framework to create a robust system for handling data retrieval and management",
+                        title: "WhatsApp Data Processing System",
                         details: [
-                            "Implemented PostgreSQL database integration for efficient storage and retrieval of WhatsApp messages.",
-                            "Designed RESTful APIs for seamless communication between the frontend and backend components.",
-                            "Ensured data security and integrity through encryption and authentication mechanisms."
+                            "Developed a comprehensive Python and Flask-based system for WhatsApp message data retrieval and management.",
+                            "Implemented PostgreSQL database integration with advanced indexing for efficient storage and quick data retrieval.",
+                            "Designed secure RESTful APIs with authentication and encryption for seamless communication between frontend and backend.",
+                            "Integrated error handling and validation mechanisms to ensure data integrity and reliability."
                         ]
                     },
                     {
-                        title: "Developed several freelance projects encompassing a diverse range of functionalities",
+                        title: "Freelance Project Suite",
                         details: [
-                            "Real-time data visualization: Utilized libraries like D3.js or Plotly to create dynamic and interactive visualizations of streaming data.",
-                            "Static web page creation: Designed and developed static web pages using HTML, CSS, and JavaScript to showcase clients' products or services.",
-                            "Customized solutions: Tailored solutions to meet clients' specific requirements, integrating various technologies such as React.js, Next.js for frontend development.",
-                            "Collaborated closely with clients to understand their needs, provide technical expertise, and deliver high-quality solutions within agreed timelines."
+                            "Developed real-time data visualization systems using D3.js and Plotly for dynamic and interactive data displays.",
+                            "Created static web pages with HTML, CSS, and JavaScript to showcase client products and services.",
+                            "Delivered customized solutions using React.js and Next.js, tailored to specific client requirements.",
+                            "Collaborated with clients to provide technical expertise and deliver projects within agreed timelines."
                         ]
                     },
                     {
                         title: "Cheque Parser Application",
                         details: [
                             "Developed a Python-based application to parse and extract information from scanned cheque images.",
-                            "Implemented Optical Character Recognition (OCR) using Tesseract to accurately read handwritten and printed text from cheques.",
-                            "Designed and implemented algorithms to identify and extract key information such as payee name, amount, date, and account numbers.",
-                            "Integrated error handling and validation mechanisms to ensure high accuracy in information extraction.",
-                            "Created a user-friendly interface for uploading cheque images and viewing extracted information."
+                            "Implemented Optical Character Recognition (OCR) using Tesseract to accurately read handwritten and printed text.",
+                            "Designed algorithms to extract key information such as payee name, amount, date, and account numbers.",
+                            "Integrated error handling and validation for high accuracy in data extraction."
                         ]
                     },
                     {
                         title: "AI-Powered Content Moderation System",
                         details: [
-                            "Developed a machine learning model using Python and TensorFlow to automatically detect and flag inappropriate content in text and images.",
-                            "Implemented a RESTful API using Flask to allow easy integration of the moderation system into existing applications.",
-                            "Created a dashboard using React and D3.js to visualize moderation statistics and allow manual review of flagged content.",
+                            "Developed a machine learning model using Python and TensorFlow to detect and flag inappropriate content.",
+                            "Implemented a RESTful API using Flask for integration into existing applications.",
+                            "Created a React and D3.js dashboard for visualizing moderation statistics and manual review.",
                             "Utilized AWS Lambda for serverless deployment, ensuring scalability and cost-efficiency."
                         ]
                     },
                     {
                         title: "WhatsApp Chat Extractor and AI Analysis",
                         details: [
-                            "Developed a JavaScript-based tool to extract chat data from WhatsApp Web, enabling users to easily backup and analyze their conversations.",
-                            "Implemented secure authentication and data handling to ensure user privacy and compliance with WhatsApp's terms of service.",
-                            "Utilized LLM (Large Language Model) technologies to train a custom model on the extracted WhatsApp chat data, enabling personalized chat analysis and insights.",
-                            "Integrated Hugging Face's transformers library to fine-tune the model and generate context-aware responses based on chat history.",
-                            "Created a user-friendly interface for chat extraction and AI-powered analysis, providing valuable insights into communication patterns and sentiment analysis."
+                            "Developed a JavaScript-based tool to extract chat data from WhatsApp Web for backup and analysis.",
+                            "Implemented secure authentication and data handling to ensure user privacy and compliance.",
+                            "Utilized Hugging Face's transformers library to train a custom LLM for personalized chat analysis.",
+                            "Created a user-friendly interface for chat extraction and AI-powered insights into communication patterns."
                         ]
-                    },
+                    }
                 ],
                 awards: [
                     {
@@ -531,179 +980,213 @@
                     }
                 ],
                 education: [
-                     {
+                    {
                         degree: "M.Tech (Software Systems) - 2022 - 2024",
                         institution: "BITS Pilani (Work Integrated Learning Platform)"
                     },
                     {
-                        degree: "B.E (CSE) - 2014 - 2018",
+                        degree: "B.E (Computer Science Engineering) - 2014 - 2018",
                         institution: "NMAM Institute of Technology (VTU)"
                     }
                 ],
-                certifications: ["Gen AI", "Agile Practitioner", "AWS Certified Developer - Associate"],
+                certifications: ["Generative AI Specialist", "Agile Practitioner", "AWS Certified Developer - Associate"],
                 hobbies: ["Guitar", "Boxing", "Open Source Contributing"]
             }
         };
 
-        document.getElementById('name').innerText = data.name;
-        document.getElementById('role').innerText = data.role;
-        document.getElementById('location').innerText = data.location;
+        // Utility function to debounce events
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
 
+        // Render functions
         function renderContactInfo(targetId, contact) {
+            if (!contact) return;
             const contactInfo = `
-                <li>Phone: ${contact.phone}</li>
-                <li>Email: <a href="mailto:${contact.email}">${contact.email}</a></li>
-                <li>LinkedIn: <a href="${contact.linkedin}" target="_blank">${contact.linkedin}</a></li>
-                <li>Github: <a href="${contact.github}" target="_blank">${contact.github}</a></li>
-                <li>Leetcode: <a href="${contact.leetcode}" target="_blank">${contact.leetcode}</a></li>
+                <li class="contact-item"><i class="fas fa-phone"></i> Phone: ${contact.phone}</li>
+                <li class="contact-item"><i class="fas fa-envelope"></i> Email: <a href="mailto:${contact.email}" aria-label="Email Rishav Anand">${contact.email}</a></li>
+                <li class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn: <a href="${contact.linkedin}" target="_blank" aria-label="Rishav Anand's LinkedIn">${contact.linkedin}</a></li>
+                <li class="contact-item"><i class="fab fa-github"></i> GitHub: <a href="${contact.github}" target="_blank" aria-label="Rishav Anand's GitHub">${contact.github}</a></li>
+                <li class="contact-item"><i class="fas fa-code"></i> LeetCode: <a href="${contact.leetcode}" target="_blank" aria-label="Rishav Anand's LeetCode">${contact.leetcode}</a></li>
             `;
             document.getElementById(targetId).innerHTML = contactInfo;
         }
 
         function renderSummary(targetId, summary) {
+            if (!summary) return;
             document.getElementById(targetId).innerText = summary;
         }
 
         function renderExperience(targetId, experiences) {
+            if (!experiences || !Array.isArray(experiences)) return;
             let experienceHtml = '';
             experiences.forEach(exp => {
                 experienceHtml += `
-                    <h3>${exp.title}</h3>
-                    <p><em>${exp.date}</em></p>
-                    <p class="job-title">${exp.role}</p>
-                    <ul>
-                        ${exp.tasks.map(task => `<li>${task}</li>`).join('')}
-                    </ul>
+                    <div class="experience-item">
+                        <div class="company-name">${exp.title}</div>
+                        <div class="job-title">${exp.role}</div>
+                        <div class="job-date">${exp.date}</div>
+                        <ul>
+                            ${exp.tasks.map(task => `<li>${task}</li>`).join('')}
+                        </ul>
+                    </div>
                 `;
             });
             document.getElementById(targetId).innerHTML = experienceHtml;
         }
 
-        function renderList(targetId, items) {
-            document.getElementById(targetId).innerHTML = items.map(item => `<li>${item}</li>`).join('');
+        function renderList(targetId, items, className = 'skill-item') {
+            if (!items || !Array.isArray(items)) return;
+            document.getElementById(targetId).innerHTML = items.map(item => `<li class="${className}">${item}</li>`).join('');
         }
 
         function renderProjects(targetId, projects) {
+            if (!projects || !Array.isArray(projects)) return;
             let projectsHtml = '';
             projects.forEach(project => {
                 projectsHtml += `
-                    <li>
+                    <div class="project-card">
                         <h3 class="project-title">${project.title}</h3>
                         <ul class="project-details">
                             ${project.details.map(detail => `<li>${detail}</li>`).join('')}
                         </ul>
-                    </li>
+                    </div>
                 `;
             });
             document.getElementById(targetId).innerHTML = projectsHtml;
         }
 
         function renderAwards(targetId, awards) {
+            if (!awards || !Array.isArray(awards)) return;
             let awardsHtml = '';
             awards.forEach(award => {
                 awardsHtml += `
-                    <li>
-                        <strong>${award.title}:</strong> ${award.details}
-                    </li>
+                    <div class="award-item">
+                        <div class="award-title">${award.title}</div>
+                        <p>${award.details}</p>
+                    </div>
                 `;
             });
             document.getElementById(targetId).innerHTML = awardsHtml;
         }
 
         function renderEducation(targetId, education) {
+            if (!education || !Array.isArray(education)) return;
             let educationHtml = '';
             education.forEach(edu => {
+                if (!edu.degree || !edu.institution) return;
                 educationHtml += `
-                    <li>
-                        <strong>${edu.degree}:</strong> ${edu.institution}
+                    <li class="education-item">
+                        <div class="degree">${edu.degree}</div>
+                        <div class="institution">${edu.institution}</div>
                     </li>
                 `;
             });
             document.getElementById(targetId).innerHTML = educationHtml;
         }
 
-        // Render Frontend Developer Info
-        renderContactInfo('contact-info-frontend', data.contact);
-        renderSummary('summary-frontend', data.frontend.summary);
-        renderExperience('experience-frontend', data.frontend.experience);
-        renderList('skills-frontend', data.frontend.skills);
-        renderList('soft-skills-frontend', data.frontend.softSkills);
-        renderProjects('projects-frontend', data.frontend.projects);
-        renderAwards('awards-frontend', data.frontend.awards);
-        renderEducation('education-frontend', data.frontend.education);
-        renderList('certifications-frontend', data.frontend.certifications);
-        renderList('hobbies-frontend', data.frontend.hobbies);
+        // Render all data
+        try {
+            document.getElementById('name').innerText = data.name || 'Name Not Available';
+            document.getElementById('role').innerText = data.role || 'Role Not Available';
+            document.getElementById('location').innerText = data.location || 'Location Not Available';
 
-        // Render Full Stack Developer Info
-        renderContactInfo('contact-info-fullstack', data.contact);
-        renderSummary('summary-fullstack', data.fullstack.summary);
-        renderExperience('experience-fullstack', data.fullstack.experience);
-        renderList('skills-fullstack', data.fullstack.skills);
-        renderList('soft-skills-fullstack', data.fullstack.softSkills);
-        renderProjects('projects-fullstack', data.fullstack.projects);
-        renderAwards('awards-fullstack', data.fullstack.awards);
-        renderEducation('education-fullstack', data.fullstack.education);
-        renderList('certifications-fullstack', data.fullstack.certifications);
-        renderList('hobbies-fullstack', data.fullstack.hobbies);
+            renderContactInfo('contact-info-frontend', data.contact);
+            renderSummary('summary-frontend', data.frontend.summary);
+            renderExperience('experience-frontend', data.frontend.experience);
+            renderList('skills-frontend', data.frontend.skills);
+            renderList('soft-skills-frontend', data.frontend.softSkills);
+            renderProjects('projects-frontend', data.frontend.projects);
+            renderAwards('awards-frontend', data.frontend.awards);
+            renderEducation('education-frontend', data.frontend.education);
+            renderList('certifications-frontend', data.frontend.certifications);
+            renderList('hobbies-frontend', data.frontend.hobbies);
 
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
+            renderContactInfo('contact-info-fullstack', data.contact);
+            renderSummary('summary-fullstack', data.fullstack.summary);
+            renderExperience('experience-fullstack', data.fullstack.experience);
+            renderList('skills-fullstack', data.fullstack.skills);
+            renderList('soft-skills-fullstack', data.fullstack.softSkills);
+            renderProjects('projects-fullstack', data.fullstack.projects);
+            renderAwards('awards-fullstack', data.fullstack.awards);
+            renderEducation('education-fullstack', data.fullstack.education);
+            renderList('certifications-fullstack', data.fullstack.certifications);
+            renderList('hobbies-fullstack', data.fullstack.hobbies);
+        } catch (error) {
+            console.error('Error rendering data:', error);
+        }
+
+        // Tab switching with loading animation
+        const tabs = document.querySelectorAll('.tab');
+        const loading = document.getElementById('loading');
+
+        function switchTab(tab) {
+            loading.classList.add('active');
+            setTimeout(() => {
                 document.querySelectorAll('.tab, .tab-content').forEach(el => el.classList.remove('active'));
                 tab.classList.add('active');
                 document.getElementById(tab.dataset.tab).classList.add('active');
+                tabs.forEach(t => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+                AOS.refresh();
+                loading.classList.remove('active');
+            }, 300);
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', debounce(() => switchTab(tab), 300));
+            tab.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    switchTab(tab);
+                }
             });
         });
 
+        // PDF generation
         function generatePDF(type) {
             const element = document.getElementById(type.toLowerCase());
             const name = data.name;
             const role = type === 'frontend' ? 'Frontend Developer' : 'Full Stack Developer';
 
-            // Create a temporary element for the PDF title
             const title = document.createElement('h1');
             title.textContent = `${name} - ${role} Resume`;
             title.style.textAlign = 'center';
-            title.style.color = '#2c3e50';
+            title.style.color = '#000';
             title.style.marginBottom = '20px';
             element.insertBefore(title, element.firstChild);
 
             const options = {
-                margin: 10,
-                filename: `${type}_Developer_Resume_${data.name}.pdf`,
+                margin: [10, 10, 10, 10],
+                filename: `${type}_Developer_Resume_${name.replace(/\s+/g, '_')}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
             };
 
             html2pdf().from(element).set(options).save().then(() => {
-                // Remove the temporary title after PDF generation
                 element.removeChild(title);
+            }).catch(error => {
+                console.error('Error generating PDF:', error);
             });
         }
 
-        // Add event listener for download icon
         document.getElementById('download-icon').addEventListener('click', () => {
             const activeTab = document.querySelector('.tab.active');
             const type = activeTab.dataset.tab;
             generatePDF(type);
         });
 
-        // Add event listeners for download buttons
-        document.getElementById('download-frontend').addEventListener('click', (e) => {
-            e.preventDefault();
-            generatePDF('Frontend');
-        });
-
-        document.getElementById('download-fullstack').addEventListener('click', (e) => {
-            e.preventDefault();
-            generatePDF('Full Stack');
-        });
-
-        // After rendering all content
-        document.addEventListener('DOMContentLoaded', function () {
+        // Initialize AOS with lazy loading
+        document.addEventListener('DOMContentLoaded', () => {
             AOS.init({
                 duration: 1000,
-                once: true
+                once: true,
+                offset: 100
             });
         });
     </script>
