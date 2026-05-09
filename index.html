@@ -433,6 +433,12 @@
         }
         .quest .quest-tag.locked { color: var(--warn); }
         .quest .quest-tag.shipped { color: var(--green); }
+        .quest .quest-tag.agent { color: var(--pink); }
+        .quest.agent-built {
+            border-color: rgba(244, 114, 182, 0.3);
+            background: linear-gradient(180deg, var(--surface) 0%, rgba(244, 114, 182, 0.04) 100%);
+        }
+        .quest.agent-built:hover { border-color: var(--pink); }
         .quest h3 {
             font-family: var(--sans);
             font-size: 16px;
@@ -840,21 +846,36 @@
                     <span class="quest-link">repo · coming soon</span>
                 </article>
 
-                <article class="quest">
-                    <div class="quest-tag shipped">★ SHIPPED</div>
+                <article class="quest agent-built">
+                    <div class="quest-tag agent">★ AGENT-BUILT · SHIPPED</div>
                     <h3>KisanKANT (Kisan Canteen)</h3>
-                    <p>Hindi-first super-app for Bharat farmers. Auth + Profile + Plots, Soil Test (book → report → 12-month plan), AI Krishi Advisor chat, and full Commerce flow (catalog + cart + orders). RBI / Sarthi / scheme endpoints stubbed contract-correct for partner integration.</p>
+                    <p>Hindi-first super-app for Bharat farmers. Auth + Profile + Plots, Soil Test (book → report → 12-month plan), AI Krishi Advisor chat, full commerce flow. RBI / Sarthi / scheme endpoints stubbed contract-correct for partner integration.</p>
+                    <p style="font-size:13px;color:var(--text-mute);margin-top:8px;font-family:var(--mono);">
+                        ↳ built agent-first: <strong style="color:var(--pink)">8 codified Claude skills</strong> in <code>.claude/skills/</code> (go-backend, postgres-discipline, security-rbi-dpdp, farmer360-events, aws-cost-discipline, api-contract-tdd, multi-persona-review, react-native-bharat) + a CLAUDE.md ground-truth doc.
+                    </p>
                     <div class="stack">
-                        <span>Go (chi + pgx)</span><span>Postgres 16</span><span>Expo / React Native</span><span>Docker</span><span>Playwright</span>
+                        <span>Go (chi + pgx)</span><span>Postgres 16</span><span>Expo / React Native</span><span>Docker</span><span>Playwright</span><span>Claude Code</span>
                     </div>
                 </article>
 
-                <article class="quest">
-                    <div class="quest-tag shipped">★ SHIPPED</div>
+                <article class="quest agent-built">
+                    <div class="quest-tag agent">★ AGENT-BUILT · SHIPPED</div>
                     <h3>Yevacure — pharma app</h3>
-                    <p>Mobile + backend platform for the pharma / pharmacy domain. Built end-to-end as a contract delivery — catalog, ordering, fulfillment flows tailored for Yevacure's operating model.</p>
+                    <p>Web platform for the pharma domain. Catalog + content + ordering flows tailored to Yevacure's operating model. Built with Claude Code as the primary dev loop — agent-driven scaffolding, refactor passes, and copy iteration.</p>
                     <div class="stack">
-                        <span>React Native</span><span>Node.js</span><span>REST APIs</span><span>Pharma domain</span>
+                        <span>React 19</span><span>Vite</span><span>Tailwind</span><span>Framer Motion</span><span>React Router</span><span>Claude Code</span>
+                    </div>
+                </article>
+
+                <article class="quest agent-built">
+                    <div class="quest-tag agent">★ AGENT-ORCHESTRATED · IN PROD</div>
+                    <h3>United — multi-repo automation suite</h3>
+                    <p>Multi-repo platform with 100+ third-party provider integrations (HR, marketing, project management, finance, dev tooling). My contribution: orchestrating Claude Code across the repos — authoring shared agent skills, automating repetitive integration scaffolding, and building reusable context packs that agents lean on across teams.</p>
+                    <p style="font-size:13px;color:var(--text-mute);margin-top:8px;font-family:var(--mono);">
+                        ↳ <strong style="color:var(--pink)">claude-context</strong> + <strong style="color:var(--pink)">awesome-claude-skills</strong> packages drive day-to-day delivery; codebase organised so agents can navigate dozens of integration sub-repos without losing thread.
+                    </p>
+                    <div class="stack">
+                        <span>Node.js</span><span>Multi-repo</span><span>Claude Code</span><span>Skill authoring</span><span>Agent orchestration</span>
                     </div>
                 </article>
 
@@ -896,7 +917,9 @@
                 </div>
                 <div class="skill-cat">
                     <h4>// ai &amp; agents</h4>
-                    <div class="skill-row"><span class="label">Claude Code</span><div class="bar"><i data-pct="88"></i></div><span class="pct">88</span></div>
+                    <div class="skill-row"><span class="label">Claude Code</span><div class="bar"><i data-pct="92"></i></div><span class="pct">92</span></div>
+                    <div class="skill-row"><span class="label">Skill authoring</span><div class="bar"><i data-pct="85"></i></div><span class="pct">85</span></div>
+                    <div class="skill-row"><span class="label">Multi-repo orch.</span><div class="bar"><i data-pct="82"></i></div><span class="pct">82</span></div>
                     <div class="skill-row"><span class="label">Cursor</span><div class="bar"><i data-pct="85"></i></div><span class="pct">85</span></div>
                     <div class="skill-row"><span class="label">LoRA / fine-tune</span><div class="bar"><i data-pct="60"></i></div><span class="pct">60</span></div>
                     <div class="skill-row"><span class="label">LangChain</span><div class="bar"><i data-pct="65"></i></div><span class="pct">65</span></div>
