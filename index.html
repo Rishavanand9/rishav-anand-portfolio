@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         :root {
             --bg: #07090b;
@@ -682,7 +681,7 @@
                 <a href="#projects">projects</a>
                 <a href="#skills">skills</a>
                 <a href="#contact">contact</a>
-                <a href="#" id="resume-btn">resume.pdf</a>
+                <a href="https://docs.google.com/document/d/1v4ZUfaj5wTOeH2im2XYDRMsSHifVEg50KAydJZ_ttHI/export?format=pdf" id="resume-btn" target="_blank" rel="noopener" download="Rishav_Anand_Resume.pdf">resume.pdf</a>
             </nav>
         </div>
     </div>
@@ -1021,19 +1020,10 @@
         }
 
         // ===== Resume download =====
+        const RESUME_URL = 'https://docs.google.com/document/d/1v4ZUfaj5wTOeH2im2XYDRMsSHifVEg50KAydJZ_ttHI/export?format=pdf';
         function downloadResume() {
-            const main = document.querySelector('main, body');
-            const opts = {
-                margin: 12,
-                filename: 'Rishav_Anand_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, backgroundColor: '#ffffff' },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            // Use the print stylesheet output by passing the body
-            html2pdf().from(document.body).set(opts).save();
+            window.open(RESUME_URL, '_blank', 'noopener');
         }
-        document.getElementById('resume-btn').addEventListener('click', e => { e.preventDefault(); downloadResume(); });
         document.getElementById('resume-btn-2').addEventListener('click', downloadResume);
 
         // ===== Quick command chips =====
