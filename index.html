@@ -681,7 +681,7 @@
                 <a href="#projects">projects</a>
                 <a href="#skills">skills</a>
                 <a href="#contact">contact</a>
-                <a href="https://docs.google.com/document/d/1v4ZUfaj5wTOeH2im2XYDRMsSHifVEg50KAydJZ_ttHI/export?format=pdf" id="resume-btn" target="_blank" rel="noopener" download="Rishav_Anand_Resume.pdf">resume.pdf</a>
+                <a href="./Rishav_Anand_Resume.pdf" id="resume-btn" target="_blank" rel="noopener" download="Rishav_Anand_Resume.pdf">resume.pdf</a>
             </nav>
         </div>
     </div>
@@ -1020,9 +1020,12 @@
         }
 
         // ===== Resume download =====
-        const RESUME_URL = 'https://docs.google.com/document/d/1v4ZUfaj5wTOeH2im2XYDRMsSHifVEg50KAydJZ_ttHI/export?format=pdf';
+        const RESUME_URL = './Rishav_Anand_Resume.pdf';
         function downloadResume() {
-            window.open(RESUME_URL, '_blank', 'noopener');
+            const a = document.createElement('a');
+            a.href = RESUME_URL;
+            a.download = 'Rishav_Anand_Resume.pdf';
+            document.body.appendChild(a); a.click(); a.remove();
         }
         document.getElementById('resume-btn-2').addEventListener('click', downloadResume);
 
