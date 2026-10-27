@@ -17,7 +17,7 @@
     -->
     <style>
         :root {
-            --scale: 1;
+            --scale: 0.94;
             --ink: #16181c;
             --dim: #3f4550;
             --rule: #c9ced6;
@@ -135,21 +135,22 @@
     <section>
         <h2>Summary</h2>
         <p>
-            Full-stack engineer with 7+ years shipping production systems across React, Node.js, Python and .NET.
-            Currently core developer on a flagship industrial gas-monitoring platform, where I own geospatial
-            data-visualization, real-time instrument-facing applications, reporting pipelines and release delivery
-            across seven microservices. Experienced in AI-augmented development with Claude Code and Cursor,
-            multi-repo agent orchestration and agentic workflows. Open to senior full-stack and AI engineering roles.
+            Full-stack engineer with 8 years shipping production systems across React/Next.js, Node.js, Go, Python and .NET.
+            Core developer on a flagship industrial gas-monitoring platform (legacy and next-generation stacks),
+            owning geospatial visualization, real-time instrument-facing applications, reporting pipelines and
+            release delivery across seven microservices. Outside work, owner of a white-label exchange platform
+            live in production since July 2026. Experienced in AI-augmented development with Claude Code and Cursor,
+            multi-agent orchestration and agentic workflows. Open to senior full-stack and AI engineering roles.
         </p>
     </section>
 
     <section class="skills">
         <h2>Skills</h2>
         <p><span class="k">Languages:</span> JavaScript, TypeScript, Python, Go, C#, SQL</p>
-        <p><span class="k">Frontend:</span> React, Next.js, React Native / Expo, D3.js, OpenLayers, Tailwind, Material UI</p>
-        <p><span class="k">Backend:</span> Node.js, Express, Flask, FastAPI, ASP.NET MVC, Django, AdonisJS</p>
-        <p><span class="k">Databases:</span> PostgreSQL, PostGIS, MSSQL, MongoDB, Redis</p>
-        <p><span class="k">Infra &amp; Tools:</span> Docker, AWS Lambda, SignalR, WebSockets, BullMQ, Celery, Keycloak, Git, Jest, PyTest, Playwright</p>
+        <p><span class="k">Frontend:</span> React, Next.js, Redux Toolkit, React Native / Expo, D3.js, Mapbox GL, OpenLayers, Tailwind</p>
+        <p><span class="k">Backend:</span> Node.js, Go, Express, FastAPI, Flask, ASP.NET MVC / Core, Django, Spring Boot</p>
+        <p><span class="k">Databases:</span> PostgreSQL, PostGIS, MSSQL, MongoDB, Redis, Supabase, Liquibase</p>
+        <p><span class="k">Infra &amp; Tools:</span> Docker, Terraform, AWS, DigitalOcean, SignalR, WebSockets, Centrifugo, ZMQ, Celery, Keycloak, GitHub Actions, Jest, PyTest, Playwright</p>
         <p><span class="k">AI &amp; Agents:</span> Claude Code, Cursor, LangChain, LoRA fine-tuning, Hugging Face, OpenAI APIs</p>
     </section>
 
@@ -162,20 +163,23 @@
                 <span class="when">Apr 2025 – Present</span>
             </div>
             <ul>
-                <li>Owned end-to-end delivery of handheld sensor-data visualization on maps and reports — service-layer
-                    integration, rendering performance for 10k+ point datasets, export packaging and per-customer
-                    feature licensing.</li>
-                <li>Built real-time driver-facing and observer-facing survey applications from POC to production in
-                    React/TypeScript — live instrument integration over SignalR, session history, capture mode and
-                    13-language internationalization.</li>
-                <li>Delivered investigation-workflow and reporting enhancements across an ASP.NET MVC / C# / MSSQL
-                    platform — new disposition states, server-side filtering and pagination, DB migrations, and
-                    licence-gated PDF and CSV report generators backed by Python/Flask workers.</li>
-                <li>Improved platform security — remediated JavaScript dependency vulnerabilities, hardened SSO
-                    identity-provider validation and CSRF handling.</li>
-                <li>Led a 5-engineer backend and QA team through three production releases; managed the release train
-                    across seven microservices (120+ version updates). 146 merged PRs on the core platform.</li>
-                <li>Co-developed LogicGas AI at a company-wide hackathon using Phi-3, LoRA and FastAPI.</li>
+                <li>Core developer across the legacy ASP.NET MVC / C# / MSSQL platform and the next-generation cloud stack
+                    (Next.js 15, React 19, FastAPI, PostgreSQL): 1,280+ commits across 8 repositories, 146 merged PRs
+                    on the core platform.</li>
+                <li>Led the full-stack timezone-localization initiative across UI, API and database (user → operator →
+                    tenant → UTC resolution chain, IANA zones, timezone-aware campaigns, reports and fleet maps) — the
+                    largest cross-repo delivery on the platform.</li>
+                <li>Built real-time driver- and observer-facing survey applications from POC to production in
+                    React/TypeScript — live analyzer integration over SignalR and ZMQ, capture mode, session history,
+                    completion summary, live observer sync and 13-language i18n.</li>
+                <li>Owned geospatial sensor-data visualization (10k+ point datasets), investigation workflows and
+                    licence-gated PDF/CSV reporting with Python/Flask/Celery workers; added server-side filtering,
+                    pagination, DB migrations and per-customer licensing.</li>
+                <li>Hardened security (dependency remediation, SSO, CSRF); built a ZMQ ingestion simulator for
+                    hardware-free QA.</li>
+                <li>Led a 5-engineer backend and QA team through three production releases; ran the release train across
+                    seven microservices (120+ version updates). Co-developed LogicGas AI (Phi-3, LoRA, FastAPI) at a
+                    company hackathon.</li>
             </ul>
         </div>
 
@@ -207,12 +211,16 @@
     <section>
         <h2>Selected Projects</h2>
         <div class="inline-list">
-            <span class="item"><span class="n">HiringHuman</span> — service-hiring marketplace with live location and
-                chat. React/Vite, FastAPI gateway, C++ CGI services, Postgres, Redis, Socket.io, Expo.</span>
+            <span class="item"><span class="n">UXC (white-label sports exchange, live Jul 2026)</span> — owner of backend, three frontends,
+                infra and QA. 8-level agent hierarchy, Redis + Centrifugo live odds, signed-webhook auto-settlement with
+                rollback and audit, Terraform AWS → DigitalOcean migration, 629-test Playwright suite.</span>
+            <span class="item"><span class="n">JeetExch &amp; Jhandi Munda</span> — Go rebuilds: multi-tenant exchange with commission cascade and
+                settlement safety; 9-game Android platform on a Blnk-ledger wallet with outbox and signed money events.
+                100+ ADRs; built via a Claude Code / Codex multi-agent worktree workflow I designed.</span>
             <span class="item"><span class="n">Real-Time Market Data Platform</span> — multi-feed ingestion with
                 normalized APIs and sub-second updates; agent-orchestrated across provider repos.</span>
-            <span class="item"><span class="n">Yevacure</span> — pharma platform built with React 19, Vite, Tailwind and
-                Claude Code workflows.</span>
+            <span class="item"><span class="n">HiringHuman, Yevacure</span> — services marketplace (React, FastAPI, Postgres/PostGIS, Expo) and
+                pharma web + field-force app (React 19, Expo, Supabase with row-level security, offline sync).</span>
         </div>
     </section>
 
